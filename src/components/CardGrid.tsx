@@ -3,14 +3,13 @@ import { useData } from '../hooks/useData';
 
 
 const CardGrid = () => {
-  const {data, loading, error} = useData('https://restcountries.com/v3/all')
+  const {data, loading, error} = useData('https://restcountries.com/v3/all2')
 
   console.log(data)
-  console.log(loading)
-  console.log(error)
 
   return (
     <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} maxWidth="95%" mx="auto" paddingY="50px">
+      {error && <Text>{error}</Text>}
       {data.map(country => (
         <Flex flexDirection="column" boxShadow="md">
           <Image height="200px" objectFit="cover" width="100%" src={country.flags[0]}/>
