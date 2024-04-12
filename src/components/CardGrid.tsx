@@ -3,15 +3,16 @@ import { useData } from '../hooks/useData';
 
 
 const CardGrid = () => {
-  const {data, loading, error} = useData('https://restcountries.com/v3/all2')
+  const {data, loading, error} = useData('https://restcountries.com/v3/all')
 
   console.log(data)
 
   return (
     <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} maxWidth="95%" mx="auto" paddingY="50px">
+      {loading && <Text>Loading...</Text>}
       {error && <Text>{error}</Text>}
       {data.map(country => (
-        <Flex flexDirection="column" boxShadow="md">
+        <Flex flexDirection="column" boxShadow="md" height="350px">
           <Image height="200px" objectFit="cover" width="100%" src={country.flags[0]}/>
           <Flex flexDirection="column" padding={5}>
             <Link fontWeight="bold" _hover={{textDecoration:'none'}} fontSize={{base:'20px', md:'25px'}}>{country.name.common}</Link>
