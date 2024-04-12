@@ -1,6 +1,6 @@
 import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
-import Country from "./components/Country";
+import CardGrid from "./components/CardGrid";
 
 export default function App() {
 
@@ -10,7 +10,7 @@ export default function App() {
         <Navbar/>
       </GridItem>
       <GridItem area="main">
-        <Country/>
+        <CardGrid/>
       </GridItem>
     </Grid>
   );

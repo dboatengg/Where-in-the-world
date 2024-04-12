@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface ApiResponse {
-    id:number;
+export interface ApiResponse {
+    region:string;
+    population:number;
+    name:{common:string}
+    flags:string[]
+    capital:string
 }
 
 export const useData =(url:string) =>{
