@@ -9,7 +9,7 @@ export default function App() {
       <GridItem area="nav">
         <Navbar/>
       </GridItem>
-      <GridItem area="main">
+      <GridItem area="main" maxWidth="1440px" mx="auto">
         <CardGrid/>
       </GridItem>
     </Grid>

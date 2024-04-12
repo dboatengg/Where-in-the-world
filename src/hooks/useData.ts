@@ -19,10 +19,12 @@ export const useData =(url:string) =>{
         try {
             const response = await axios.get<ApiResponse[]>(url)
             setData(response.data)
-            setLoading(false)
         }
         catch(error:any){
             setError(error.message)
+        }
+        finally {
+            setLoading(false)
         }
     }
     fetchData()
