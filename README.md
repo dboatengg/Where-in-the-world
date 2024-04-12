@@ -20,3 +20,5 @@ Where in the World is a web application that allows users to search for countrie
 
 ## Credits
 Special thanks to [Frontend Mentor](https://www.frontendmentor.io/) for providing the design and inspiration for this project. Frontend Mentor offers challenges to improve your coding skills by building realistic projects.
+
+**Note**: This project is still a work in progress. Contributions and feedback are welcome!
