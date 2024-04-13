@@ -12,18 +12,18 @@ export interface ApiResponse {
 export const useData =(url:string) =>{
    const [data, setData] = useState<ApiResponse[]>([])
    const [error, setError] = useState<string |null>(null)
-   const [loading, setLoading] = useState(true)
+   const [loading, setLoading] = useState(false)
 
    useEffect(() => {
+    setLoading(true)
     const fetchData = async () =>{
         try {
             const response = await axios.get<ApiResponse[]>(url)
             setData(response.data)
+            setLoading(false)
         }
         catch(error:any){
             setError(error.message)
-        }
-        finally {
             setLoading(false)
         }
     }
