@@ -17,7 +17,7 @@ const SearchInput = () => {
   }
 
   return (
-    <InputGroup width="400px" marginY="20px" boxShadow="lg" bg={colorMode === 'dark'?'gray.700':''} size="lg">
+    <InputGroup width={{base:'100%',md:'400px'}} marginY="20px" boxShadow="lg" bg={colorMode === 'dark'?'gray.700':''} size="lg">
       <InputLeftElement  children={<GoSearch/>}/>
       <Input ref={ref} onChange={handleChange} placeholder="Search for a country..."  />
     </InputGroup>
