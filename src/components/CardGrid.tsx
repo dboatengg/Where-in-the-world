@@ -1,4 +1,4 @@
-import { Box, Card, Flex, Heading, Image, Img, Link, SimpleGrid, Text, textDecoration } from '@chakra-ui/react'
+import { Box, Card, Flex, Heading, Image, Img, Link, SimpleGrid, Text, textDecoration, useColorMode } from '@chakra-ui/react'
 import { useData } from '../hooks/useData';
 import Skeletons from './Skeletons';
 import SearchInput from './SearchInput';
@@ -7,6 +7,7 @@ import { sortData } from '../utils/sortData';
 
 const CardGrid = () => {
   const {data, loading, error} = useData('https://restcountries.com/v3/all')
+  const {colorMode}= useColorMode()
 
   // console.log(data)
   console.log(loading)
@@ -14,15 +15,19 @@ const CardGrid = () => {
   //sort data
   const sortedData = sortData(data)
 
+  //no. of skeletons to display
   const skeletons = [1,2,3,4,5,6,7,8,9]
 
   return (
     <>
+    <Box maxWidth={{base:'90%',md:'95%'}} mx="auto">
+      <SearchInput/>
+    </Box>
     {error && <Text textAlign="center" marginY={5} color='red' fontWeight="medium">{error}</Text>}
     <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} paddingY="50px" maxWidth={{base:'90%',md:'95%'}} mx="auto">
         {loading && skeletons.map(skeleton=><Skeletons key={skeleton}/>)}
         {sortedData.map(country => (
-          <Flex key={country.name.common} flexDirection="column" boxShadow="lg" height="380px" borderRadius={5} maxWidth="350px">
+          <Flex key={country.name.common} flexDirection="column" boxShadow="xl" bg={colorMode === 'dark'?'gray.700':''} height="380px" borderRadius={5} maxWidth="350px">
             <Image height={{base:'250px', md:'200px'}} objectFit="cover" width="100%" src={country.flags[0]} borderTopLeftRadius={5} borderTopRightRadius={5}/>
             <Flex flexDirection="column" padding={5} alignItems="flex-start">
               <Link fontWeight="bold" _hover={{textDecoration:'none'}} fontSize="18px">{country.name.common}</Link>
