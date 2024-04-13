@@ -1,4 +1,4 @@
-# Where in the World
+# Where in the World?
 
 ![desktop-design-home-light](https://github.com/dboatengg/Where-in-the-world/assets/89385798/b051af51-06f3-4424-a4dd-5570812e2a53)
 
@@ -19,6 +19,6 @@ Where in the World is a web application that allows users to search for countrie
 - Axios
 
 ## Credits
-Special thanks to [Frontend Mentor](https://www.frontendmentor.io/) for providing the design and inspiration for this project. Frontend Mentor offers challenges to improve your coding skills by building realistic projects.
+Special thanks to [Frontend Mentor](https://www.frontendmentor.io/) for providing the design and inspiration for this project.
 
-**Note**: This project is still a work in progress. Contributions and feedback are welcome!
+**Note**: I'm still working this project. It's not done yet. 
