@@ -1,13 +1,15 @@
-import { Box, Card, Flex, Heading, Image, Img, Link, SimpleGrid, Text, textDecoration, useColorMode } from '@chakra-ui/react'
+import { Box, Card, Flex, Image, Link, SimpleGrid, Text, useColorMode } from '@chakra-ui/react'
 import { useData } from '../hooks/useData';
 import Skeletons from './Skeletons';
 import SearchInput from './SearchInput';
 import { sortData } from '../utils/sortData';
+import { useState } from 'react';
 
 
 const CardGrid = () => {
   const {data, loading, error} = useData('https://restcountries.com/v3/all')
   const {colorMode}= useColorMode()
+
 
   // console.log(data)
   console.log(loading)
@@ -21,7 +23,7 @@ const CardGrid = () => {
   return (
     <>
     <Box maxWidth={{base:'90%',md:'95%'}} mx="auto">
-      <SearchInput/>
+      <SearchInput />
     </Box>
     {error && <Text textAlign="center" marginY={5} color='red' fontWeight="medium">{error}</Text>}
     <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} paddingY="50px" maxWidth={{base:'90%',md:'95%'}} mx="auto">
