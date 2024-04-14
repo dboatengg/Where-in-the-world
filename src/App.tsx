@@ -3,9 +3,6 @@ import Navbar from "./components/Navbar";
 import CardGrid from "./components/CardGrid";
 import { useState } from "react";
 
-// interface SearchQuery {
-//   searchText:string
-// }
 
 export default function App() {
   const [query, setQuery] = useState<string>("")

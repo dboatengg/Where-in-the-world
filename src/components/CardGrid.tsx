@@ -3,6 +3,7 @@ import { useData } from '../hooks/useData';
 import Skeletons from './Skeletons';
 import SearchInput from './SearchInput';
 import { sortData } from '../utils/sortData';
+import RegionSelector from './RegionSelector';
 
 interface Props {
   onSearch: (query: string) => void;
@@ -20,6 +21,7 @@ const CardGrid = ({onSearch, query}:Props) => {
   //sort data
   const sortedData = sortData(data)
   
+  //filter data
   const filteredData = sortedData.filter(country =>
     country.name.common.toLowerCase().includes(query.toLowerCase())
   );
@@ -29,9 +31,10 @@ const CardGrid = ({onSearch, query}:Props) => {
 
   return (
     <>
-    <Box maxWidth={{base:'90%',md:'95%'}} mx="auto">
+    <Flex justifyContent="space-between" gap={{base:'10px'}} flexDirection={{base:'column', md:'row'}} alignItems="center" maxWidth={{base:'90%',md:'95%'}} mx="auto">
       <SearchInput onSearch={onSearch}/>
-    </Box>
+      <RegionSelector/>
+    </Flex>
     {error && <Text textAlign="center" marginY={5} color='red' fontWeight="medium">{error}</Text>}
     <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} paddingY="50px" maxWidth={{base:'90%',md:'95%'}} mx="auto">
         {loading && skeletons.map(skeleton=><Skeletons key={skeleton}/>)}
