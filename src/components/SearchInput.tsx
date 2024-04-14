@@ -2,17 +2,17 @@ import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/re
 import { FormEvent, useRef, useState } from "react"
 import {GoSearch} from 'react-icons/go'
 
-// interface Props {
-//   onSearch:(query:string)=>void
-// }
+interface Props {
+  onSearch:(query:string)=>void
+}
 
-const SearchInput = () => {
+const SearchInput = ({onSearch}:Props) => {
   const ref = useRef<HTMLInputElement>(null)
   const {colorMode} = useColorMode()
 
   const handleChange = (event:FormEvent)=>{
     event.preventDefault();
-    // if(ref.current) onSearch(ref.current?.value)
+    if(ref.current) onSearch(ref.current?.value)
     console.log(ref.current?.value)
   }
 
