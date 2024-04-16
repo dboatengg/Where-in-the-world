@@ -36,7 +36,7 @@ const CardGrid = ({onSearch, query}:Props) => {
       <RegionSelector/>
     </Flex>
     {error && <Text textAlign="center" marginY={5} color='red' fontWeight="medium">{error}</Text>}
-    <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} paddingY="50px" maxWidth={{base:'90%',md:'95%'}} mx="auto">
+    <SimpleGrid spacing={10} columns={{base:1, md:2,lg:4}} marginTop="40px" marginBottom="50px" maxWidth={{base:'90%',md:'95%'}} mx="auto" >
         {loading && skeletons.map(skeleton=><Skeletons key={skeleton}/>)}
         {filteredData.map(country => (
           <Flex key={country.name.common} flexDirection="column" boxShadow="lg" bg={colorMode === 'dark'?'gray.700':''} height="380px" borderRadius={5} maxWidth={{base:'100%',lg:'300px'}}>
