@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export interface ApiResponse {
     region:string;
     population:number;
-    name:{common:string}
+    name:{common:string, nativeName:{lit:{common:string}}}
     flags:string[]
     capital:string
 }
