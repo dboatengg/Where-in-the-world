@@ -43,9 +43,9 @@ const CardGrid = ({onSearch, query}:Props) => {
             <Image height={{base:'230px', md:'200px'}} objectFit="cover" width="100%" src={country.flags[0]} borderTopLeftRadius={5} borderTopRightRadius={5}/>
             <Flex flexDirection="column" padding={5} alignItems="flex-start">
               <Link fontWeight="bold" _hover={{textDecoration:'none'}} fontSize="18px">{country.name.common}</Link>
-              <Text fontSize="14px">Population: {country.population.toLocaleString()}</Text>
-              <Text fontSize="14px">Region: {country.region}</Text>
-              <Text fontSize="14px"><strong>Capital</strong> {country.capital}</Text>
+              <Text fontSize="14px"><strong>Population: </strong>{country.population.toLocaleString()}</Text>
+              <Text fontSize="14px"><strong>Region: </strong>{country.region}</Text>
+              <Text fontSize="14px"><strong>Capital: </strong> {country.capital}</Text>
             </Flex>
           </Flex>
         ))}
